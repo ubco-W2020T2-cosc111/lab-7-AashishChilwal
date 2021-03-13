@@ -1,6 +1,6 @@
 
 import java.util.Scanner;
-public class Q5
+public class Main
 {
 	public static void main(String[] args) {
 	    Scanner checker = new Scanner(System.in);
@@ -8,8 +8,8 @@ public class Q5
 		int salary = checker.nextInt();
 		int tax = 0;
 		System.out.println("Enter M=married, S=single: ");
-		String status = checker.nextLine();
-		if (salary < 35000 && status.charAt(0) == "M" || status.chartAt(0) == "m")
+		String [] Status = checker.next();
+		if (salary < 35000 && (Status[0].equals("M") || Status[0].equals("m")))
 		{
 		    tax = (salary * (20/100));
 		    System.out.println("Tax$ : " + tax);
@@ -33,6 +33,9 @@ public class Q5
 		{
 		    tax = (salary * (30/100));
 		    System.out.println("Tax$ : " + tax);
+		}
+		else{
+		    System.out.println("Invalid Marital Status! ");
 		}
 	}
 }
